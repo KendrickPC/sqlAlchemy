@@ -16,3 +16,18 @@ engine =create_engine(
 'sqlite:///restaurantmenu.db')
 
 Base.metadata.create_all(engine)
+
+
+
+
+
+# creating a class and table. Note that this should be placed between the configuration code
+
+class Restaurant(Base): 
+
+__tablename__ = 'restaurant'
+
+
+class MenuItem(Base):
+
+__tablename__ = 'menu_item'
