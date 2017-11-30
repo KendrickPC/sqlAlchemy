@@ -1,5 +1,3 @@
-terminalCode.MD
-
 Last login: Tue Nov 28 13:50:41 on console
 Kenneths-MacBook-Pro:~ everydaykenneth$ cd /Volumes/sdMemory/FullStackDeveloper/sqlAlchemy 
 Kenneths-MacBook-Pro:sqlAlchemy everydaykenneth$ vagrant up
@@ -690,4 +688,137 @@ Cachapa
 Chantrelle Toast
 Guanciale Chawanmushi
 Lemon Curd Ice Cream Sandwich
+>>> veggieBurgers = session.query(MenuItem).filter_by(name = 'Veggie Burger')
+>>> for veggieBurger in veggieBurgers:
+...     print veggieBurger.id
+...     print veggieBurger.price
+...     print veggieBurger.restaurant.name
+...     print "\n"
+... 
+2
+$7.50
+Urban Burger
+
+
+10
+$5.99
+Urban Burger
+
+
+21
+$9.50
+Panda Garden
+
+
+27
+$6.80
+Thyme for That Vegetarian Cuisine 
+
+
+37
+$7.00
+Andala's
+
+
+43
+$9.50
+Auntie Ann's Diner 
+
+
+>>> UrbanVeggieBurger = session.query(MenuItem).filter_by(id = 2).one()
+>>> print UrbanVeggieBurger.price
+$7.50
+>>> UrbanVeggieBurger.price = '3.33'
+>>> session.add(UrbanVeggieBurger)
+>>> session.commit()
+>>> veggieBurgers = session.query(MenuItem).filter_by(name = 'Veggie Burger')
+>>> for veggieBurger in veggieBurgers:
+...     print veggieBurger.id
+...     print veggieBurger.price
+...     print veggieBurger.restaurant.name
+...     print "\n"
+... 
+2
+3.33
+Urban Burger
+
+
+10
+$5.99
+Urban Burger
+
+
+21
+$9.50
+Panda Garden
+
+
+27
+$6.80
+Thyme for That Vegetarian Cuisine 
+
+
+37
+$7.00
+Andala's
+
+
+43
+$9.50
+Auntie Ann's Diner 
+
+
+>>> for veggieBurger in veggieBurgers:
+...     if veggieBurger.price != '3.33':
+...             veggieBurger.price = '$2.99' 
+...             session.add(veggieBurger)
+...             session.commit()
+... 
+>>> for veggieBurger in veggieBurgers:
+...     print veggieBurger.id
+...     print veggieBurger.price
+...     print veggieBurger.restaurant.name
+...     print "\n"
+... 
+2
+3.33
+Urban Burger
+
+
+10
+$2.99
+Urban Burger
+
+
+21
+$2.99
+Panda Garden
+
+
+27
+$2.99
+Thyme for That Vegetarian Cuisine 
+
+
+37
+$2.99
+Andala's
+
+
+43
+$2.99
+Auntie Ann's Diner 
+
+
+>>> spinach = session.query(MenuItem).filter_by(name = 'Spinach Ice Cream').one()
+>>> print spinach.restaurant.name
+Auntie Ann's Diner 
+>>> session.delete(spinach)
+>>> session.commit()
+>>> spinach = session.query(MenuItem).filter_by(name = 'Spinach Ice Cream').one()
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "/usr/lib/python2.7/dist-packages/sqlalchemy/orm/query.py", line 2020, in one
+    raise orm_exc.NoResultFound("No row was found for one()")
+sqlalchemy.orm.exc.NoResultFound: No row was found for one()
 >>> 
