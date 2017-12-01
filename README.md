@@ -1,9 +1,21 @@
-###November 27th, 2017
+December 01, 2017
+
+PYTHON BaseHTTPServer 
+https://docs.python.org/2/library/basehttpserver.html
+
+webserver.py code from the following web address:
+https://raw.githubusercontent.com/udacity/Full-Stack-Foundations/master/Lesson-2/first-web-server/webserver.py
+
+
+
+
+
+November 27th, 2017
 
 sqlAlchemy setup 
 
 
-###November 30th, 2017
+November 30th, 2017
 
 SQL Alchemy search queries documentation - very useful as a reference: 
 http://docs.sqlalchemy.org/en/rel_0_9/orm/query.html
