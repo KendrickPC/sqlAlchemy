@@ -3,11 +3,12 @@ December 01, 2017
 PYTHON BaseHTTPServer 
 https://docs.python.org/2/library/basehttpserver.html
 
-webserver.py code from the following web address:
-https://raw.githubusercontent.com/udacity/Full-Stack-Foundations/master/Lesson-2/first-web-server/webserver.py
-
-
-
+Objectives:
+[] list all restaurants
+[] add edit and delete links
+[] create new restaurants
+[] rename a restaurant
+[] delete a restaurant
 
 
 November 27th, 2017
