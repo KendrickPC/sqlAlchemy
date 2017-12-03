@@ -54,6 +54,11 @@ class webServerHandler(BaseHTTPRequestHandler):
                 # writing for loop for restaurants
                 for restaurant in restaurants:
                     output += restaurant.name
+                    output += "</br>"
+                    output += "<a href='#'> EDIT</a>"
+                    output += "</br>"
+                    output += "<a href='#'> DELETE</a>"
+                    output += "</br>"
                     output += "</br></br></br>"
 
                 output += "</body></html>"
