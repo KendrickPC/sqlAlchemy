@@ -1,6 +1,11 @@
 December 03, 2017
 
-Run a pip-install vagrant
+For creating a new restaurant, note the following: 
+
+messagecontent = fields.get('newRestaurantName') should be indented such that it is inside the 'if' block
+
+
+
 
 
 
