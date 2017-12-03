@@ -1,3 +1,10 @@
+December 03, 2017
+
+Run a pip-install vagrant
+
+
+
+
 December 01, 2017
 
 PYTHON BaseHTTPServer 

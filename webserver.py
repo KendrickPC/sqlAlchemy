@@ -1,9 +1,8 @@
 from BaseHTTPServer import BaseHTTPRequestHandler, HTTPServer
 import cgi
 
-
 # import create, read, update, and delete operations for sqlalchemy
-from database_setup import Base, Restaurants, MenuItem
+from database_setup import Base, Restaurant, MenuItem
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 
@@ -12,7 +11,6 @@ engine = create_engine('sqlite:///restaurantmenu.db')
 Base.metadata.bind = engine
 DBSession = sessionmaker(bind=engine)
 session = DBSession()
-
 
 
 class webServerHandler(BaseHTTPRequestHandler):
@@ -49,11 +47,15 @@ class webServerHandler(BaseHTTPRequestHandler):
                 self.send_response(200)
                 self.send_header('Content-type', 'text/html')
                 self.end_headers()
+                # session.query(restaurants) below 
+                restaurants = session.query(Restaurant).all()                
                 output = ""
                 output += "<html><body>"
-                # session.query(restaurants) below 
-                output += "<h1>session.query(restaurants)</h1>"
-                output += '''<form method='POST' enctype='multipart/form-data' action='/hello'><h2>What would you like me to say?</h2><input name="message" type="text" ><input type="submit" value="Submit"> </form>'''
+                # writing for loop for restaurants
+                for restaurant in restaurants:
+                    output += restaurant.name
+                    output += "</br></br></br>"
+
                 output += "</body></html>"
                 self.wfile.write(output)
                 print output
