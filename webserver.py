@@ -2,6 +2,11 @@ from BaseHTTPServer import BaseHTTPRequestHandler, HTTPServer
 import cgi
 
 
+# import create, read, update, and delete operations for sqlalchemy
+from database_setup import Base, Restaurants, MenuItem
+from sqlalchemy import create_engine
+from sqlalchemy.orm import sessionmaker
+
 class webServerHandler(BaseHTTPRequestHandler):
 
     def do_GET(self):
