@@ -7,6 +7,14 @@ from database_setup import Base, Restaurants, MenuItem
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 
+# Writing a session and connecting it to the Database
+engine = create_engine('sqlite:///restaurantmenu.db')
+Base.metadata.bind = engine
+DBSession = sessionmaker(bind=engine)
+session = DBSession()
+
+
+
 class webServerHandler(BaseHTTPRequestHandler):
 
     def do_GET(self):
