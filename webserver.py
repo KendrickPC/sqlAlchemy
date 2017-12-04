@@ -90,17 +90,10 @@ class webServerHandler(BaseHTTPRequestHandler):
     def do_POST(self):
         try:
             if self.path.endswith("/delete"):
-                ctype, pdict = cgi.parse_header(
-                    self.headers.getheader('content-type'))
-                if ctype == 'multipart/form-data':
-                    fields = cgi.parse_multipart(self.rfile, pdict)
-                    messagecontent = fields.get('newRestaurantName')
                     restaurantIDPath = self.path.split("/")[2]
-
                     myRestaurantQuery = session.query(Restaurant).filter_by(
                         id=restaurantIDPath).one()
-                    if myRestaurantQuery != []:
-                        myRestaurantQuery.name = messagecontent[0]
+                    if myRestaurantQuery:
                         session.delete(myRestaurantQuery)
                         session.commit()
                         self.send_response(301)
