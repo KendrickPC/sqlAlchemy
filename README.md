@@ -1,14 +1,12 @@
+December 04, 2017
+
+
+
 December 03, 2017
 
 For creating a new restaurant, note the following: 
 
 messagecontent = fields.get('newRestaurantName') should be indented such that it is inside the 'if' block
-
-
-
-
-
-
 
 December 01, 2017
 
