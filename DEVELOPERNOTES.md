@@ -1,8 +1,9 @@
 DEVELOPERNOTES.md
 
-December 04, 2017
+December 08, 2017
 
-
+[] Begin flask framework with project.py file
+[] 
 
 December 03, 2017
 
