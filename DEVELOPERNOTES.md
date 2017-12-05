@@ -3,7 +3,9 @@ DEVELOPERNOTES.md
 December 08, 2017
 
 [] Begin flask framework with project.py file
-[] 
+[] Rewrote project.py files to match up with webserver.py 
+[] Added templates.html files
+[] Added static css files
 
 December 03, 2017
 
