@@ -22,5 +22,14 @@
 4. cd into the vagrant folder with the following command: 
 	cd /vagrant
 
-5. run the webserver.py file with the following python command: 
-	python webserver.py
+5. run the project.py file with the following python command: 
+	python project.py
+
+6. open up a web browser and head to the following URL address:
+	localhost:5000/restaurant/1/menu
+	localhost:5000/restaurant/2/menu
+	localhost:5000/restaurant/3/menu
+	localhost:5000/restaurant/4/menu
+	etc...
+
+7. make whatever changes you'd like. 
